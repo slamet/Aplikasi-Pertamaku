@@ -1,0 +1,74 @@
+<h2>Edit user</h2>
+
+<% form_for(@user) do |f| %>
+<fieldset>
+<%= f.error_messages %>
+<legend>Enter Profile details</legend>
+<div class="form_row">
+<%= f.label :name %><br />
+<%= f.text_field :name %>
+</div>
+<div class="form_row">
+<%= f.label :email %><br />
+<%= f.text_field :email %>
+</div>
+
+<div class="form_row">
+<%= f.label :password %><br />
+<%= f.password_field :password %>
+</div>
+<div class="form_row">
+<%= f.label :password_confirmation, "Confirmation" %><br />
+<%= f.password_field :password_confirmation %>
+</div>
+<div class="form_row">
+<%= f.label :city, "City" %><br />
+<%= f.text_field :city %>
+</div>
+<div class="form_row">
+<%= f.label :work, "Current Work" %><br />
+<%= f.text_field :work %>
+</div>
+
+<div class="form_row">
+<%=f.label :study, "Current Study" %><br />
+<%=f.text_field :study %>
+</div>
+
+<div class="form_row">
+<%=f.label :developer, "Developer" %><br />
+<%=f.text_field :developer %>
+</div>
+
+<div class="form_row">
+<%=f.label :repository, "Repository" %><br />
+<%=f.text_field :repository %>
+</div>
+
+<div class="form_row">
+<%= f.label :gender, "Gender" %><br />
+<%= radio_button :user, :gender, "male" %> Male
+<%= radio_button :user, :gender, "female" %> Female
+</div>
+
+<div class="form_row">
+<%= f.label :birthdate, "Birthdate" %><br />
+<%= date_select :user, :birthdate,
+					   :start_year => 1980,
+					   :end_year => Time.now.year,
+					   :include_blank => true,
+					   :order =>[:month, :day, :year] %>
+</div>
+					   
+<div class="actions">
+<%= f.submit "Update" %>
+</div>
+</fieldset>
+<% end %>
+<div>
+ <%=gravatar_image_tag @user.email, :size=>25 %>
+ <div class="btn">
+<a href="http://gravatar.com/emails">change</a>
+</div>
+</div>
+

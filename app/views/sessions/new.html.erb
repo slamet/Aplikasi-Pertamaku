@@ -1,0 +1,19 @@
+
+
+<% form_for(:session, :url => sessions_path) do |f| %>
+<fieldset>
+<legend>Sign In</legend>
+<div class="field">
+<%= f.label :email %><br />
+<%= f.text_field :email %>
+</div>
+<div class="field">
+<%= f.label :password %><br />
+<%= f.password_field :password %>
+</div>
+<div class="actions">
+<%= f.submit "Sign in" %>
+</div>
+</fieldset>
+<% end %>
+<p>New user? <%= link_to "Sign up now!", signup_path %></p>

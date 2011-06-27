@@ -1,0 +1,5 @@
+                                     ==Catatan Penting ==
+                                  Localhost:3000 => menjadi home page
+
+buang file index.html lalu refresh
+

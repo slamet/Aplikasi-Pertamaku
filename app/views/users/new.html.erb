@@ -1,0 +1,32 @@
+
+<div style="margin:0;padding:0;display:inline">
+<input name="authenticity_token" type="hidden"
+value="rB82sI7Qw5J9J1UMILG/VQL411vH5putR+JwlxLScMQ=" />
+</div>
+<% form_for(@user) do |f| %>
+
+<fieldset>
+<legend>Sign Up</legend>
+<%= f.error_messages %>
+<div class="field">
+<%= f.label :name %><br />
+<%= f.text_field :name %>
+</div>
+<div class="field">
+<%= f.label :email %><br />
+<%= f.text_field :email %>
+</div>
+<div class="field">
+<%= f.label :password %><br />
+<%= f.password_field :password %>
+</div>
+<div class="field">
+<%= f.label :password_confirmation, "Confirmation" %><br />
+<%= f.password_field :password_confirmation %>
+</div>
+<div class="actions">
+<%= f.submit "Sign up" %>
+</div>
+
+</fieldset>
+<% end %>

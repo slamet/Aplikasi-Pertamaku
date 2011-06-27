@@ -1,0 +1,14 @@
+<% if @users and not @users.empty? %>
+<table class="users" border="0" cellpadding="5" cellspacing="1">
+<th>Name</th> <th>Email</th> <th>Gender</th>
+<% @users.each do |user| %>
+<tr class="<%= cycle('odd', 'even') %>">
+<td><%= link_to @user.name %>
+</td>
+<td><%= @user.email %></td>
+<td><%= @user.gender %></td>
+
+</tr>
+<% end %>
+</table>
+<% end %>

@@ -1,0 +1,48 @@
+<table class="profile">
+
+<tr>
+
+
+<td class="main">
+  <h2>
+  
+ <%= gravatar_for @user %>
+   
+       <%= @user.name %>
+       
+  </h2>
+
+
+ <strong>Current study</strong> <%= h @user.study %></br>
+ <strong>Current work</strong> <%= h @user.work %></br>
+<strong>Developer</strong> <%= h @user.developer %></br>
+<strong>Repository</strong> <%= h @user.repository %></br>
+
+
+  <%= render 'follow_form' if signed_in? %>
+  
+  
+
+  
+  <% unless @user.microposts.empty? %>
+<table class="microposts">
+
+<%= render @microposts %>
+</table>
+<%= @microposts %>
+<% end %>
+  
+</td>
+<td class="sidebar round">
+    <strong>Name</strong> <%= h @user.name %><br />
+    
+    <strong>Gender</strong> <%= h @user.gender %><br />
+    <strong>City</strong> <%= h @user.city %><br />
+     <strong>Birthdate</strong> <%= h @user.birthdate %><br />
+    <strong>URL</strong> <%= link_to user_path(@user), @user %>
+    <strong>Microposts</strong> <%= @user.microposts.count %>
+    <%= render 'pages/stats' %>
+    
+</td>
+</tr>
+</table>
